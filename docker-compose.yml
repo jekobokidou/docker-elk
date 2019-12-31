@@ -84,6 +84,16 @@ services:
     depends_on:
       - kibana
 
+  fly:
+    build:
+      context: fly/
+    ports:
+      - "8080:8080"
+    networks:
+      - elk
+    depends_on:
+      - apm-server
+
 networks:
   elk:
     driver: bridge
