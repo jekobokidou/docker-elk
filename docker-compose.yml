@@ -24,7 +24,8 @@ services:
       # see https://www.elastic.co/guide/en/elasticsearch/reference/current/bootstrap-checks.html
       discovery.type: single-node
     networks:
-      - elk
+      elk:
+        ipv4_address: 172.23.0.6
 
   logstash:
     build:
@@ -46,7 +47,8 @@ services:
     environment:
       LS_JAVA_OPTS: "-Xmx256m -Xms256m"
     networks:
-      - elk
+      elk:
+        ipv4_address: 172.23.0.2
     depends_on:
       - elasticsearch
 
@@ -63,7 +65,8 @@ services:
     ports:
       - "5601:5601"
     networks:
-      - elk
+      elk:
+        ipv4_address: 172.23.0.3
     depends_on:
       - elasticsearch
 
@@ -91,7 +94,8 @@ services:
     ports:
       - "8080:8080"
     networks:
-      - elk
+      elk:
+        ipv4_address: 172.23.0.5
     depends_on:
       - elasticsearch
 
