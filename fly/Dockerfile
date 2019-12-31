@@ -1,0 +1,1 @@
+FROM jekoboki/tomcatfly:latest
