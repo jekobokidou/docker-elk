@@ -82,7 +82,7 @@ services:
     networks:
       - elk
     depends_on:
-      - kibana
+      - elasticsearch
 
   fly:
     build:
@@ -92,7 +92,7 @@ services:
     networks:
       - elk
     depends_on:
-      - apm-server
+      - elasticsearch
 
 networks:
   elk:
