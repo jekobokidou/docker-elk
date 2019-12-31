@@ -96,8 +96,9 @@ services:
 
 networks:
   elk:
-    driver: bridge
-    config:
-      - subnet: 172.23.0.0/16
+    ipam:
+      driver: default
+      config:
+        - subnet: 172.23.0.0/16
 volumes:
   elasticsearch:
