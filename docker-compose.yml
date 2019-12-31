@@ -80,7 +80,8 @@ services:
     ports:
       - "8200:8200"
     networks:
-      - elk
+      elk:
+        ipv4_address: 172.23.0.4
     depends_on:
       - elasticsearch
 
