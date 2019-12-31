@@ -67,6 +67,23 @@ services:
     depends_on:
       - elasticsearch
 
+  apm-server:
+    build:
+      context: apm/
+      args:
+        ELK_VERSION: $ELK_VERSION
+    volumes:
+      - type: bind
+        source: ./apm/config/apm-server.docker.yml
+        target: /usr/share/apm-server/apm-server.yml
+        read_only: true
+    ports:
+      - "8200:8200"
+    networks:
+      - elk
+    depends_on:
+      - kibana
+
 networks:
   elk:
     driver: bridge
