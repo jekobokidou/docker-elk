@@ -8,8 +8,8 @@ services:
         ELK_VERSION: $ELK_VERSION
     volumes:
       - ./extensions/apm-server/config/apm-server.yml:/usr/share/apm-server/apm-server.yml:ro
-#    ports:
-#      - "8200:8200"
+    ports:
+      - "8200:8200"
     networks:
       - elk
     depends_on:
