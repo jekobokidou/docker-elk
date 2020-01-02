@@ -69,21 +69,18 @@ services:
 
   apm-server:
     build:
-      context: apm/
+      context: extensions/apm-server/
       args:
         ELK_VERSION: $ELK_VERSION
     volumes:
-      - type: bind
-        source: ./apm/config/apm-server.docker.yml
-        target: /usr/share/apm-server/apm-server.yml
-        read_only: true
+      - ./extensions/apm-server/config/apm-server.yml:/usr/share/apm-server/apm-server.yml:ro
     ports:
       - "8200:8200"
     networks:
       - elk
     depends_on:
       - elasticsearch
-
+      
   fly:
     build:
       context: fly/
