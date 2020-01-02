@@ -17,6 +17,7 @@ services:
     ports:
       - "9200:9200"
       - "9300:9300"
+      - "8200:8200"
     environment:
       ES_JAVA_OPTS: "-Xmx256m -Xms256m"
       ELASTIC_PASSWORD: changeme
