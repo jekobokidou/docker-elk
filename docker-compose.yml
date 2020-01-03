@@ -50,6 +50,7 @@ services:
 #      - elk
     depends_on:
       - elasticsearch
+    network_mode: "host"
 
   kibana:
     build:
@@ -67,6 +68,7 @@ services:
 #      - elk
     depends_on:
       - elasticsearch
+    network_mode: "host"
 
 #networks:
 #  elk:
