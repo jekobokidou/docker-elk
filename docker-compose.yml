@@ -25,6 +25,7 @@ services:
       discovery.type: single-node
 #    networks:
 #      - elk
+    network_mode: "host"
 
   logstash:
     build:
