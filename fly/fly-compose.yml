@@ -10,5 +10,3 @@ services:
       - elk
     depends_on:
       - elasticsearch
-    extra_hosts:
-      elasticsearch: 127.0.0.1
