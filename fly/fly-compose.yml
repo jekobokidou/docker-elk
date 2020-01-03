@@ -10,3 +10,4 @@ services:
 #      - elk
     depends_on:
       - elasticsearch
+    network_mode: "host"
