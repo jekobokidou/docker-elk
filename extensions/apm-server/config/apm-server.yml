@@ -1,7 +1,5 @@
 apm-server:
   host: 0.0.0.0:8200
-  extra_hosts:
-    elasticsearch: 127.0.0.1
     
 output:
   elasticsearch:
