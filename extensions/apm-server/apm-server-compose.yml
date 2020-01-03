@@ -9,7 +9,7 @@ services:
     volumes:
       - ./extensions/apm-server/config/apm-server.yml:/usr/share/apm-server/apm-server.yml:ro
     ports:
-      - "0.0.0.0:8200:0.0.0.0:8200"
+      - "0.0.0.0:8200:8200"
     networks:
       - elk
     depends_on:
