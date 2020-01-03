@@ -6,7 +6,7 @@ services:
       context: fly/
     ports:
       - "8080:8080"
-    networks:
-      - elk
+#    networks:
+#      - elk
     depends_on:
       - elasticsearch
