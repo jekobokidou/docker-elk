@@ -70,6 +70,32 @@ services:
       - elasticsearch
     network_mode: "host"
 
+  apm-server:
+    build:
+      context: extensions/apm-server/
+      args:
+        ELK_VERSION: $ELK_VERSION
+    volumes:
+      - ./extensions/apm-server/config/apm-server.yml:/usr/share/apm-server/apm-server.yml:ro
+    ports:
+      - "8200:8200"
+#    networks:
+#      - elk
+    depends_on:
+      - elasticsearch
+    network_mode: "host"
+    
+  fly:
+    build:
+      context: fly/
+    ports:
+      - "8080:8080"
+#    networks:
+#      - elk
+    depends_on:
+      - elasticsearch
+    network_mode: "host"
+    
 #networks:
 #  elk:
 #    driver: bridge
